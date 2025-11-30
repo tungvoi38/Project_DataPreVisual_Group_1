@@ -1,0 +1,61 @@
+---
+config:
+  theme: neutral
+  themeVariables:
+    primaryColor: '#808080'
+    secondaryColor: '#A0A0A0'
+    lineColor: '#666666'
+    fontSize: 13px
+  layout: dagre
+---
+flowchart TB
+ subgraph LEGEND["Legend"]
+    direction TB
+        L1["CSV File Nodes"]
+        L2{{"Cleaning / QC"}}
+        L3{{"Feature Engineering"}}
+        L4{{"Final Transform"}}
+  end
+    TSEP["=== Train Pipeline ==="] --> TP["train_processed.csv<br>(2736 × 181)"]
+    TP -- 181 → 179 cols --> TC{{"Cleaning &amp; QC<br>• Missing flags<br>• Outlier capping<br>• Drop PCIAT<br>• Sensor fixes"}}
+    TC -- rows same<br>179 → 179 cols --> TCL["train_cleaned.csv<br>(2736 × 179)"]
+    TCL -- +64 engineered features<br>179 → 243 cols --> TF{{"Feature Engineering<br>• 60+ ratios &amp; interactions<br>• Actigraphy signals<br>• SDS/CGAS risk bands<br>• PAQ discrepancy"}}
+    TF -- rows same<br>243 → 243 cols --> TFE["train_fed.csv<br>(2736 × 243)"]
+    TFE -- +45 transformed features<br>243 → 288 cols --> TFIN{{"Final Transform<br>• Scaling (Std/Robust)<br>• log1p + Yeo-Johnson<br>• Season OHE<br>• PCA<br>• Final interactions"}}
+    TFIN --> TEND["train_final.csv<br>(2736 × 288)"]
+    TEND --> XSEP["=== Test Pipeline ==="]
+    XSEP --> XP["test_processed.csv<br>(20 × 158)"]
+    XP -- 158 → 178 cols --> XC{{"Mirror Cleaning<br>• Apply train rules<br>• Add same flags<br>• Schema alignment"}}
+    XC -- rows same --> XCL["test_cleaned.csv<br>(20 × 178)"]
+    XCL -- +64 engineered features<br>178 → 242 cols --> XF{{"Apply Feature Engineering<br>• Deterministic FE<br>• No train stats used<br>• Full parity with train"}}
+    XF -- rows same<br>242 → 242 cols --> XFE["test_fed.csv<br>(20 × 242)"]
+    XFE -- +45 transformed features<br>242 → 287 cols --> XFIN{{"Train-Fitted Transform<br>• Scaling<br>• PCA projection<br>• Season OHE alignment"}}
+    XFIN --> XEND["test_final.csv<br>(20 × 287)"]
+    TC -. Rules fitted on Train only .-> XC
+
+     L1:::fileTrain
+     L2:::cleanStep
+     L3:::feStep
+     L4:::tfStep
+     TSEP:::sep
+     TP:::fileTrain
+     TC:::cleanStep
+     TCL:::fileTrain
+     TF:::feStep
+     TFE:::fileTrain
+     TFIN:::tfStep
+     TEND:::fileTrain
+     XSEP:::sep
+     XP:::fileTest
+     XC:::cleanStep
+     XCL:::fileTest
+     XF:::feStep
+     XFE:::fileTest
+     XFIN:::tfStep
+     XEND:::fileTest
+    classDef fileTrain fill:#ffffff,stroke:#2E75B6,stroke-width:2px,rx:8,ry:8,font-weight:bold
+    classDef fileTest fill:#ffffff,stroke:#70AD47,stroke-width:2px,rx:8,ry:8,font-weight:bold
+    classDef cleanStep fill:#F4B183,stroke:#c97c2d,stroke-width:2px,rx:6,ry:6
+    classDef feStep fill:#9CC177,stroke:#5f8d48,stroke-width:2px,rx:6,ry:6
+    classDef tfStep fill:#A9A9D4,stroke:#6b6ba3,stroke-width:2px,rx:6,ry:6
+    classDef sep fill:#eeeeee,stroke:#aaaaaa,stroke-width:1px,rx:4,ry:4,font-weight:bold
