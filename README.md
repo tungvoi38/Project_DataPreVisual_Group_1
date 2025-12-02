@@ -1,89 +1,77 @@
-# 🛠️ Cài đặt và Thiết lập Dự án
+# 🧠 Project: Child Mind Institute - Data Storytelling
 
-Chào mừng bạn đến với **Group_1**, dự án này mang tên  **Child Mind Institute**. Dưới đây là hướng dẫn chi tiết để thiết lập môi trường và chạy dự án này trên máy cá nhân của bạn.
+> **Topic:** Child Mental Health & Behavioral Data Analysis
 
-## 📋 Yêu cầu tiên quyết (Prerequisites)
+Welcome to the **Group 1** repository. This project focuses on processing and visualizing data from the **Child Mind Institute** to uncover critical insights regarding child mental health.
 
-Trước khi bắt đầu, hãy đảm bảo máy tính của bạn đã được cài đặt:
+## 📖 Introduction
 
-* **Python** (Phiên bản 3.8 trở lên): [Tải tại đây](https://www.python.org/downloads/)
-* **Git**: [Tải tại đây](https://git-scm.com/downloads)
-* Một trình biên tập code (VS Code, PyCharm,...)
+In this project, we analyze datasets related to children's behavior and physiological indicators (such as sleep patterns and physical activity). Our main goal is to transform raw data into valuable information through a Data Science pipeline.
 
-## 🚀 Hướng dẫn cài đặt từng bước
+Key steps include:
+1.  **Data Cleaning:** Handling missing data, noise, and reformatting structures.
+2.  **Exploratory Data Analysis (EDA):** Investigating data distribution characteristics.
+3.  **Visualization:** Building charts to illustrate correlations between various factors.
 
-Làm theo các bước sau để chạy dự án:
+## 🎯 Objectives
 
-### 1. Clone dự án về máy
+* ✅ Build an effective Data Preprocessing pipeline.
+* ✅ Visualize data clearly to support decision-making.
+* ✅ Detect patterns related to child health and behavior.
+* ✅ Practice teamwork and source code management with Git.
 
-Mở Terminal (hoặc Git Bash) và chạy lệnh sau để tải mã nguồn về:
+## 🛠️ Tech Stack
+
+* **Language:** Python 🐍
+* **Data Processing:** `Pandas`, `NumPy`
+* **Visualization:** `Matplotlib`, `Seaborn`
+* **Tools:** Jupyter Notebook / VS Code
+
+## 💡 Our Approach
+
+To address the challenges of this dataset, our team applied the following process:
+
+1.  **Data Cleaning Strategy:**
+    * Handling missing values using specific methods (e.g., Interpolation / Mean Imputation).
+    * Removing outliers and normalizing time-series data formats.
+
+2.  **Analysis & Visualization Techniques:**
+    * Using **Correlation Heatmaps** to detect relationships between behavioral indicators.
+    * Using **Time-series Charts** to track trends over time.
+    * Applying **Distribution plots** to assess data skewness.
+
+3.  **Deriving Insights:**
+    * Synthesizing key findings from charts to draw conclusions on specific behaviors (e.g., sleep habits, internet usage).
+
+## 👥 Team Members
+
+| No. | Name | Role |
+| :---: | :--- | :--- |
+| 1 | **[Vũ Bùi Đình Tùng]** | Leader |
+| 2 | [Đoàn Tùng Lâm] |   
+| 3 | [Trương Đức Anh] |
+| 4 | [Thiều Diệu Thúy] | 
+| 5 | [Bùi Thị Lan Anh] | 
+
+---
+
+# 🛠️ Installation & Setup
+
+## 📋 Prerequisites
+
+Before starting, ensure your machine has the following installed:
+
+* **Python** (Version 3.8 or higher): [Download here](https://www.python.org/downloads/)
+* **Git**: [Download here](https://git-scm.com/downloads)
+* A Code Editor (VS Code, PyCharm, etc.)
+
+## 🚀 Step-by-Step Installation
+
+Follow these steps to run the project:
+
+### 1. Clone the Repository
+
+Open your Terminal (or Git Bash) and run the following command to download the source code:
 
 ```bash
 git clone [https://github.com/tungvoi38/Project_DataPreVisual_Group_1.git](https://github.com/tungvoi38/Project_DataPreVisual_Group_1.git)
-```
-
-Sau đó, di chuyển vào thư mục dự án:
-
-```bash
-cd Project_DataPreVisual_Group_1
-```
-
-### 2. Thiết lập môi trường ảo (Virtual Environment)
-
-Khuyến khích sử dụng môi trường ảo để tránh xung đột thư viện:
-
-```bash
-# Tạo môi trường ảo tên là 'venv'
-python -m venv venv
-```
-
-**Kích hoạt môi trường ảo:**
-
-* **Trên Windows:**
-    ```bash
-    .\venv\Scripts\activate
-    ```
-* **Trên macOS / Linux:**
-    ```bash
-    source venv/bin/activate
-    ```
-
-### 3. Cài đặt các thư viện cần thiết
-
-Sau khi kích hoạt môi trường ảo, hãy cài đặt các gói phụ thuộc từ file `requirements.txt`:
-
-```bash
-pip install -r requirements.txt
-```
-
-> **Lưu ý:** Nếu bạn gặp lỗi khi cài đặt, hãy thử nâng cấp `pip` trước bằng lệnh: `python -m pip install --upgrade pip`
-
-### 4. Chạy dự án
-
-Sau khi cài đặt xong, bạn có thể khởi chạy chương trình bằng lệnh:
-
-```bash
-# Nếu là chạy file Python thông thường
-python main.py
-
-# Nếu dự án sử dụng Streamlit (Ví dụ)
-streamlit run app.py
-
-# Nếu sử dụng Jupyter Notebook
-jupyter notebook
-```
-
-*(Hãy thay `main.py` hoặc `app.py` bằng tên file chính xác của dự án nhóm bạn)*
-
----
-
-## 🤝 Đóng góp (Contributing)
-
-Nếu bạn là thành viên nhóm muốn cập nhật code:
-
-1.  Tạo nhánh mới (`git checkout -b feature/Ten-Tinh-Nang`)
-2.  Commit thay đổi (`git commit -m 'Thêm tính năng X'`)
-3.  Push lên branch (`git push origin feature/Ten-Tinh-Nang`)
-4.  Tạo một Pull Request.
-
----
