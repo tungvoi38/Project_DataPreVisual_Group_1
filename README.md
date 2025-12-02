@@ -75,3 +75,55 @@ Open your Terminal (or Git Bash) and run the following command to download the s
 
 ```bash
 git clone [https://github.com/tungvoi38/Project_DataPreVisual_Group_1.git](https://github.com/tungvoi38/Project_DataPreVisual_Group_1.git)
+```
+
+Then, navigate to the project directory:
+
+```bash
+cd Project_DataPreVisual_Group_1
+```
+
+### 2. Set Up Virtual Environment
+
+It is recommended to use a virtual environment to avoid library conflicts:
+
+```bash
+# Create a virtual environment named 'venv'
+python -m venv venv
+```
+
+**Activate the virtual environment:**
+
+* **On Windows:**
+    ```bash
+    .\venv\Scripts\activate
+    ```
+* **On macOS / Linux:**
+    ```bash
+    source venv/bin/activate
+    ```
+
+### 3. Install Dependencies
+
+Once the virtual environment is activated, install the required packages from `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
+```
+
+> **Note:** If you encounter installation errors, try upgrading `pip` first: `python -m pip install --upgrade pip`
+
+### 4. Run the Project
+
+After installation, you can run: 
+' đoạn này chưa biết'
+---
+
+## 🤝 Contributing
+
+If you are a team member looking to update the code:
+
+1. Create a new branch (`git checkout -b feature/New-Feature-Name`)
+2. Commit your changes (`git commit -m 'Add feature X'`)
+3. Push to the branch (`git push origin feature/New-Feature-Name`)
+4. Create a Pull Request.
