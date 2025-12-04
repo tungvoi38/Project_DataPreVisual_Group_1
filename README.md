@@ -16,6 +16,32 @@ This project aims to investigate and develop a predictive model capable of analy
 
 Ultimately, the project aspires to contribute to a healthier and more fulfilling future in which children are better equipped to navigate the digital landscape responsibly and sustainably.
 
+## Dataset Description: Healthy Brain Network (HBN)
+
+### Overview
+The Healthy Brain Network (HBN) dataset constitutes a clinical cohort comprising approximately 5,000 individuals aged 5–22 years, who have undergone comprehensive clinical and research assessments.
+
+The primary objective of the HBN initiative is to identify biological markers (biomarkers) to enhance the diagnosis and therapeutic intervention of psychiatric and learning disorders through an objective biological lens.
+
+### Data Modalities
+This project utilizes two distinct data modalities derived from the study:
+
+* Physical Activity Data: Encompassing time-series data from wrist-worn accelerometers, fitness assessments, and self-reported questionnaires.
+    
+* Internet Usage Behavior Data: Metrics reflecting online activity patterns.
+
+📂 Data Architecture
+The competition data is aggregated from two primary sources:
+
+Parquet Files: Containing time-series actigraphy (accelerometer) data.
+
+CSV Files: Containing the remaining tabular phenotypic and behavioral data.
+
+💡 Data Characteristics
+High Sparsity: The dataset exhibits a significant degree of missingness, with a majority of measures absent for most participants.
+
+Target Variable: Notably, the target variable, Severity Impairment Index (sii), is missing for a subset of subjects within the Training Set.
+
 ## 🎯 Project Objectives
 This project is engineered to address the challenges associated with raw data processing and the extraction of valuable intelligence regarding child health and behavior. We have established four pivotal objectives:
 
