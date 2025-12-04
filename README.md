@@ -16,40 +16,47 @@ This project aims to investigate and develop a predictive model capable of analy
 
 Ultimately, the project aspires to contribute to a healthier and more fulfilling future in which children are better equipped to navigate the digital landscape responsibly and sustainably.
 
-## 🎯 Objectives
+## 🎯 Project Objectives
+This project is engineered to address the challenges associated with raw data processing and the extraction of valuable intelligence regarding child health and behavior. We have established four pivotal objectives:
 
-* ✅ Build an effective Data Preprocessing pipeline.
-* ✅ Visualize data clearly to support decision-making.
-* ✅ Detect patterns related to child health and behavior.
-* ✅ Practice teamwork and source code management with Git.
+1. Construct a Robust Data Preprocessing Pipeline
+* The primary goal is to generate a clean, consistent dataset prepared for analytical rigor.
 
-Key steps include:
-1.  **Data Cleaning:** Handling missing data, noise, and reformatting structures.
-2.  **Exploratory Data Analysis (EDA):** Investigating data distribution characteristics.
-3.  **Visualization:** Building charts to illustrate correlations between various factors.
+* Data Cleansing: Establish a systematic procedure to rigorously handle data imperfections, including the imputation of missing values, noise reduction, and the elimination of duplicate entries.
 
-## 🛠️ Tech Stack
+* Standardization & Transformation: Execute data reformatting, outlier detection and mitigation, and structural normalization to guarantee Data Integrity throughout the pipeline.
 
-* **Language:** Python 🐍
-* **Data Processing:** `Pandas`, `NumPy`
-* **Visualization:** `Matplotlib`, `Seaborn`
-* **Tools:** Jupyter Notebook / VS Code
+2. Exploratory Data Analysis (EDA) & Visualization
+The goal is to transmute raw numerical data into interpretative visual models.
 
-## 💡 Our Approach
+* Exploratory Data Analysis (EDA): Apply descriptive statistics to elucidate the underlying distribution and characteristics of the dataset.
 
-To address the challenges of this dataset, our team applied the following process:
+* Data Visualization: Develop a comprehensive system of visual representations (Bar, Line, Scatter, Heatmap charts) to vividly illustrate key trends and multivariate correlations among variables.
 
-1.  **Data Cleaning Strategy:**
-    * Handling missing values using specific methods (e.g., Interpolation / Mean Imputation).
-    * Removing outliers and normalizing time-series data formats.
+3. Domain-Specific Insights (Health & Behavior)
+* The goal is to derive empirical value from the data to support the domain context.
 
-2.  **Analysis & Visualization Techniques:**
-    * Using **Correlation Heatmaps** to detect relationships between behavioral indicators.
-    * Using **Time-series Charts** to track trends over time.
-    * Applying **Distribution plots** to assess data skewness.
+* Pattern Recognition: Identify and analyze associations between environmental factors, lifestyle habits, and the status of child health and behavioral development.
 
-3.  **Deriving Insights:**
-    * Synthesizing key findings from charts to draw conclusions on specific behaviors (e.g., sleep habits, internet usage).
+* Decision Support: Provide data-driven insights that serve as a reliable foundation for parents and researchers in making informed decisions.
+
+4. Collaborative Workflow & Version Control
+The goal is to simulate a professional software development environment.
+
+* Version Control Management: Proficiently utilize Git & GitHub for source code management (SCM), version history tracking, and effective conflict resolution.
+
+* Team Collaboration: Enhance proficiency in task distribution and the maintenance of clear, comprehensive Technical Documentation.
+
+## 🛠️ Technologies & Tools
+
+The project leverages a robust stack of open-source tools within the Python ecosystem:
+
+| Category | Technologies |
+| :--- | :--- |
+| **Language** | ![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python&logoColor=white) |
+| **Data Processing** | ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white) |
+| **Visualization** | ![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=python&logoColor=white) ![Seaborn](https://img.shields.io/badge/Seaborn-7db0bc?style=for-the-badge&logo=python&logoColor=white) |
+| **Tools & VCs** | ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white) ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white) |
 
 ## 👥 Team Members
 
