@@ -1,4 +1,4 @@
-# 🧠 Project: Child Mind Institute - Data Storytelling
+# Project: Child Mind Institute - Data Storytelling
 
 > **Topic:** Child Mental Health & Behavioral Data Analysis
 
@@ -30,19 +30,19 @@ This project utilizes two distinct data modalities derived from the study:
     
 * Internet Usage Behavior Data: Metrics reflecting online activity patterns.
 
-📂 Data Architecture
+Data Architecture
 The competition data is aggregated from two primary sources:
 
 Parquet Files: Containing time-series actigraphy (accelerometer) data.
 
 CSV Files: Containing the remaining tabular phenotypic and behavioral data.
 
-💡 Data Characteristics
+Data Characteristics
 High Sparsity: The dataset exhibits a significant degree of missingness, with a majority of measures absent for most participants.
 
 Target Variable: Notably, the target variable, Severity Impairment Index (sii), is missing for a subset of subjects within the Training Set.
 
-## 🎯 Project Objectives
+##  Project Objectives
 This project is engineered to address the challenges associated with raw data processing and the extraction of valuable intelligence regarding child health and behavior. We have established four pivotal objectives:
 
 1. Construct a Robust Data Preprocessing Pipeline
@@ -73,7 +73,7 @@ The goal is to simulate a professional software development environment.
 
 * Team Collaboration: Enhance proficiency in task distribution and the maintenance of clear, comprehensive Technical Documentation.
 
-## 🛠️ Technologies & Tools
+##  Technologies & Tools
 
 The project leverages a robust stack of open-source tools within the Python ecosystem:
 
@@ -84,7 +84,7 @@ The project leverages a robust stack of open-source tools within the Python ecos
 | **Visualization** | ![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=python&logoColor=white) ![Seaborn](https://img.shields.io/badge/Seaborn-7db0bc?style=for-the-badge&logo=python&logoColor=white) |
 | **Tools & VCs** | ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white) ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white) |
 
-## 👥 Team Members
+##  Team Members
 
 | No. | Name | Role |
 | :---: | :--- | :--- |
@@ -106,7 +106,7 @@ Before starting, ensure your machine has the following installed:
 * **Git**: [Download here](https://git-scm.com/downloads)
 * A Code Editor (VS Code, PyCharm, etc.)
 
-## 🚀 Step-by-Step Installation
+##  Step-by-Step Installation
 
 Follow these steps to run the project:
 
@@ -160,7 +160,7 @@ After installation, you can run:
 ' đoạn này chưa biết'
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 If you are a team member looking to update the code:
 
