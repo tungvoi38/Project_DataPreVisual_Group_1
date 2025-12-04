@@ -15,10 +15,6 @@ In contrast, physical and fitness-related indicators are highly accessible, wide
 This project aims to investigate and develop a predictive model capable of analyzing children’s physical activity data to detect early signs of unhealthy or uncontrolled internet and technology use. Such early detection would enable timely interventions that promote healthier and more responsible digital behaviors.
 
 Ultimately, the project aspires to contribute to a healthier and more fulfilling future in which children are better equipped to navigate the digital landscape responsibly and sustainably.
-Key steps include:
-1.  **Data Cleaning:** Handling missing data, noise, and reformatting structures.
-2.  **Exploratory Data Analysis (EDA):** Investigating data distribution characteristics.
-3.  **Visualization:** Building charts to illustrate correlations between various factors.
 
 ## 🎯 Objectives
 
