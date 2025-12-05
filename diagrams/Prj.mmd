@@ -1,0 +1,113 @@
+flowchart TD
+
+%% =========================
+%% STYLE DEFINITIONS
+%% =========================
+classDef train fill:#1f77b4,stroke:#0b3c68,stroke-width:2px,color:white;
+classDef test fill:#2ca02c,stroke:#145214,stroke-width:2px,color:white;
+classDef clean fill:#ffb347,stroke:#b36b00,stroke-width:2px,color:black;
+classDef fe fill:#3aa6a6,stroke:#1f6666,stroke-width:2px,color:white;
+classDef tf fill:#a67ce8,stroke:#5f3ca6,stroke-width:2px,color:white;
+classDef fs fill:#f2cf66,stroke:#b89a00,stroke-width:2px,color:black;
+classDef final fill:#f2b600,stroke:#8a6f00,stroke-width:2px,color:black;
+
+%% =========================
+%% TITLE
+%% =========================
+A["**Raw CMI PIU Data**  
+(Actigraphy + Surveys + Demographics)"]:::train
+
+%% =========================
+%% RAW → PROCESSED
+%% =========================
+A -->|"Parsing & Standardization  
+(2736×? → 2736×181)"| B1["**train_processed.csv**"]:::train
+A -->|"Parsing & Standardization  
+(20×? → 20×181)"| B2["**test_processed.csv**"]:::test
+
+%% =========================
+%% BASELINE MODELING
+%% =========================
+B1 -->|"Baseline modeling  
+(LGBM/XGB/CatBoost)"| C1["**2_Baseline_Comparison.ipynb**  
+• Raw features  
+• No cleaning/FE  
+• QWK baseline"]:::train
+B2 -->|"Feature alignment  
+(Remove train-only cols)"| C2["Test aligned  
+for baseline"]:::test
+
+%% =========================
+%% DATA CLEANING
+%% =========================
+B1 -->|"Missing flags  
+Outlier capping  
+PCIAT drop/impute"| D1["**3_Data_Cleaning_final.ipynb**  
+Clean Train  
+(2736×181 → 2736×230)"]:::clean
+B2 -->|"Apply train rules  
+(train-only medians, caps)"| D2["Clean Test  
+(20×181 → 20×230)"]:::clean
+
+D1 -.->|"Rules fitted  
+on train only"| D2
+
+%% =========================
+%% FEATURE ENGINEERING
+%% =========================
+D1 -->|"100+ new features  
+Ratios, interactions  
+Actigraphy circadian signals"| E1["**4_Feature_Engineering_final.ipynb**  
+Train FE  
+(2736×230 → 2736×288)"]:::fe
+D2 -->|"Apply deterministic FE"| E2["Test FE  
+(20×230 → 20×288)"]:::fe
+
+%% =========================
+%% DATA TRANSFORMATION
+%% =========================
+E1 -->|"Fit Yeo-Johnson  
+RobustScaler  
+PCA (train fitted)"| F1["**5_Data_Transform.ipynb**  
+Transformed Train  
+(Scaled/PCA applied)"]:::tf
+E2 -->|"Use train-fitted  
+scalers + PCA"| F2["Transformed Test"]:::tf
+
+F1 -.->|"Transformers fit on train  
+applied to test only"| F2
+
+%% =========================
+%% FEATURE SELECTION
+%% =========================
+F1 -->|"Multicollinearity removal  
+Permutation importance  
+Model-based pruning"| G1["**6_Feature_Selection.ipynb**  
+Selected Train  
+(~K features)"]:::fs
+F2 -->|"Apply selected feature mask"| G2["Selected Test"]:::fs
+
+%% =========================
+%% FINAL MODELING
+%% =========================
+G1 -->|"Train 3 models  
+LGBM / XGB / CatBoost  
++ OOF folds"| H1["**8_Final_Modeling.ipynb**  
+OOFs + Blending + Hill-Climb  
+→ submission.csv"]:::final
+G2 -->|"Predict test  
+with blended model"| H2["Final Predictions  
+(submission ready)"]:::final
+
+%% =========================
+%% LEGEND
+%% =========================
+subgraph Legend ["📘 **Legend**"]
+direction LR
+L1["Blue = Train Pipeline"]:::train
+L2["Green = Test Pipeline"]:::test
+L3["Orange = Data Cleaning"]:::clean
+L4["Teal = Feature Engineering"]:::fe
+L5["Purple = Transformation"]:::tf
+L6["Gold = Feature Selection / Final Modeling"]:::final
+end
