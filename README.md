@@ -156,8 +156,40 @@ pip install -r requirements.txt
 
 ### 4. Run the Project
 
-After installation, you can run: 
-' đoạn này chưa biết'
+After installation, you can run to execution order: 
+
+### Phase 1: Exploration & Baseline
+
+1. **`1_Data_Overview.ipynb`**
+   * **Purpose:** Load raw data, perform Exploratory Data Analysis (EDA), and check data distribution/structure.
+   * **Outcome:** Understanding the dataset and identifying issues to address.
+
+2. **`2_Baseline_Comparison.ipynb`**
+   * **Purpose:** Run basic algorithms on raw (or minimally processed) data to establish a baseline score.
+
+3. **`2_Full_Baseline for Storytelling.ipynb`**
+   * **Purpose:** Visualize baseline results and construct the project narrative/storytelling.
+
+### Phase 2: Data Preprocessing
+
+4. **`3_Data_Cleaning_final.ipynb`**
+   * **Purpose:** Handle missing values, treat outliers, and clean the data.
+   * **Important:** This file exports the "clean data" file used in later steps.
+
+5. **`4_Feature_Engineering_final.ipynb`**
+   * **Purpose:** Create new features from the cleaned data to improve model performance.
+
+6. **`5_Data_Transform.ipynb`**
+   * **Purpose:** Perform data scaling/normalization and encode categorical variables.
+
+7. **`6_Feature_Selection.ipynb`**
+   * **Purpose:** Select the most important features for the final model to reduce dimensionality and prevent overfitting.
+
+### Phase 3: Modeling
+
+8. **`8_Final_Modeling_final.ipynb`**
+   * **Purpose:** Train the Final Model with the best hyperparameters, evaluate results on the test set, and save the model.
+
 ---
 
 ##  Contributing
